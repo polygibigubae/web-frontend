@@ -1,0 +1,120 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "faq": "FAQ",
+    "marys_joy": "Mary's Joy",
+    "departments": "Departments",
+    "login": "Log in",
+    "signup": "Sign up",
+    "poly_gibi_gubaie": "Poly Gibi Gubaie",
+    "poly_gibi_gubaie_am": "ፖሊ ጊቢ ጉባኤ"
+  },
+  "departments": {
+    "education": {
+      "name": "Education",
+      "desc": "Spiritual courses and doctrine"
+    },
+    "development": {
+      "name": "Development / Charity / Projects",
+      "desc": "Project development and management"
+    },
+    "choir": {
+      "name": "Choir",
+      "desc": "Hymns and worship team"
+    },
+    "members_care": {
+      "name": "Members Care",
+      "desc": "Community outreach and support"
+    },
+    "language_special_needs": {
+      "name": "Language & Special Needs",
+      "desc": "Language and special needs service"
+    },
+    "programs_coordination": {
+      "name": "Batch & Programs Coordination",
+      "desc": "Programs scheduling"
+    },
+    "professionals_charity": {
+      "name": "Professionals & Charity",
+      "desc": "Volunteering professional skills"
+    },
+    "info_records": {
+      "name": "Information & Records",
+      "desc": "Data entry and management"
+    },
+    "audit_inspection": {
+      "name": "Audit & Inspection",
+      "desc": "Auditing resources"
+    },
+    "finance_property": {
+      "name": "Finance & Property",
+      "desc": "Resource management"
+    }
+  },
+  "hero": {
+    "established": "Established 1888",
+    "title_digital": "The Digital",
+    "title_sanctuary": "Sanctuary.",
+    "description": "Where ancient Ethiopian Orthodox Tewahedo traditions meet the digital age to connect our global community effortlessly. Access resources, stay informed, and engage spiritually inside this sanctuary.",
+    "start_contributing": "Start Contributing",
+    "get_involved": "Get Involved",
+    "membership_registration": "Membership Registration"
+  },
+  "topic_cards": {
+    "explore_interest": "Explore Your Interest",
+    "topic_1_tag": "SPIRITUAL BLOG",
+    "topic_1_title": "Read helpful words from the fathers and get spiritual strength",
+    "topic_1_desc": "Read helpful words from the fathers and get spiritual strength in all situations through discovering the textual messages on our digital app.",
+    "topic_2_tag": "PODCASTS & MEDIA",
+    "topic_2_title": "Hear the path of the soul through giving in spiritual media with Gibi Gubaie",
+    "topic_2_desc": "Hear insightful voices on faith and giving throughout the year uncovering higher meanings from those dedicated to spiritual causes.",
+    "topic_3_tag": "SPIRITUAL QUESTIONS",
+    "topic_3_title": "Finding the Truth: Common Questions and Answers in the Orthodox Church",
+    "topic_3_desc": "Find deeply helpful guidance and resources specifically to answer and discover deeper faith here."
+  },
+  "join": {
+    "welcome": "You are welcome",
+    "join_title": "Join the Association",
+    "join_desc": "We invite you to partner with us in our membership program. Through this, we continue ensuring the legacy of faith is handed down.",
+    "learn_more": "Learn More",
+    "join_btn": "Join the Association",
+    "see_what": "See what Association Membership can do for you"
+  },
+  "highlight": {
+    "title_1": "Mary's Joy:",
+    "title_2": "A Compassionate Pulse",
+    "quote": "\"The joy of giving is the meaning the true peace of spirit. Our small act helps many in new habits and create new lives.\"",
+    "author": "— H.E. Abune Petros",
+    "desc": "Through Mary's Joy, find meaning through the giving to our community activities, discovering that joy starts with a spiritually healthy approach to life.",
+    "explore": "Explore Mary's Joy"
+  },
+  "footer": {
+    "quote_taste": "\"Taste & See that the LORD is Good\"",
+    "quote_author": "— Psalms 34:8",
+    "quick_links": "Quick Links",
+    "connect": "Connect",
+    "rights_reserved": "© 2024 Poly Gibi Gubaie (ፖሊ ጊቢ ጉባኤ). All Rights Reserved.",
+    "privacy_policy": "Privacy Policy"
+  },
+  "registration": {
+    "title": "Poly Gibi Gubaie Membership Registration",
+    "subtitle": "In the name of the Father, the Son, and the Holy Spirit, One God, Amen! Welcome to the Poly Gibi Gubaie membership registration form.",
+    "first_name": "First Name (Include title if applicable)",
+    "last_name": "Last Name",
+    "phone": "Phone Number",
+    "woreda": "Woreda of Origin",
+    "zone": "Zone of Origin",
+    "batch_dept": "Batch & Department",
+    "family": "Which Family group do you belong to? (Write 'Not assigned' if not)",
+    "role": "Your role in Gibi Gubaie",
+    "program_attending": "Which program do you attend?",
+    "not_attending_reason": "If you don't attend programs, why?",
+    "department_to_serve": "Which department would you like to serve in?",
+    "sunday_school_before": "Have you learned in Sunday School before?",
+    "sunday_school_level": "If yes, which level?",
+    "sunday_school_served": "Have you served in Sunday School before?",
+    "sunday_school_served_dept": "If yes, in which department?",
+    "submit": "Submit Registration"
+  }
+}
