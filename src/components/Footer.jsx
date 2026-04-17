@@ -1,6 +1,8 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 const Footer = () => {
+  const { t } = useTranslation();
   return (
     <footer className="bg-white dark:bg-[#00111a] pt-24 pb-8 border-t border-zinc-100 dark:border-zinc-800 transition-colors duration-500 relative overflow-hidden">
       <div className="px-10 xl:px-20 max-w-[1400px] mx-auto relative z-10">
@@ -14,15 +16,16 @@ const Footer = () => {
               </h3>
             </div>
             <p className="text-[14px] text-zinc-600 dark:text-zinc-400 leading-[1.8] max-w-[400px]">
-              "Taste & See that the LORD is Good"
-              <br />— Orthodox Youth Union of America (OYUMA)
+              {t("footer.quote_taste")}
+              <br />
+              {t("footer.quote_author")}
             </p>
           </div>
 
           {/* Links */}
           <div>
             <h4 className="text-[11px] font-bold tracking-[0.2em] text-zinc-900 dark:text-white uppercase mb-6">
-              Quick Links
+              {t("footer.quick_links")}
             </h4>
             <ul className="space-y-4 text-[13px] text-zinc-600 dark:text-zinc-400 font-medium">
               <li>
@@ -30,7 +33,7 @@ const Footer = () => {
                   href="#"
                   className="hover:text-brand-yellow transition-colors"
                 >
-                  Home
+                  {t("nav.home")}
                 </a>
               </li>
               <li>
@@ -38,7 +41,7 @@ const Footer = () => {
                   href="#"
                   className="hover:text-brand-yellow transition-colors"
                 >
-                  About
+                  {t("nav.about")}
                 </a>
               </li>
               <li>
@@ -46,7 +49,7 @@ const Footer = () => {
                   href="#"
                   className="hover:text-brand-yellow transition-colors"
                 >
-                  FAQ
+                  {t("nav.faq")}
                 </a>
               </li>
               <li>
@@ -54,7 +57,7 @@ const Footer = () => {
                   href="#"
                   className="hover:text-brand-yellow transition-colors"
                 >
-                  Mary's Joy
+                  {t("nav.marys_joy")}
                 </a>
               </li>
               <li>
@@ -62,7 +65,7 @@ const Footer = () => {
                   href="#"
                   className="hover:text-brand-yellow transition-colors"
                 >
-                  Departments (ክፍላት)
+                  {t("nav.departments")}
                 </a>
               </li>
             </ul>
@@ -71,7 +74,7 @@ const Footer = () => {
           {/* Socials */}
           <div>
             <h4 className="text-[11px] font-bold tracking-[0.2em] text-zinc-900 dark:text-white uppercase mb-6">
-              Connect
+              {t("footer.connect")}
             </h4>
             <ul className="space-y-4 text-[13px] text-zinc-600 dark:text-zinc-400 font-medium">
               <li>
@@ -105,20 +108,20 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="flex flex-col md:flex-row items-center justify-between pt-8 border-t border-zinc-100 dark:border-zinc-800/50">
           <p className="text-[11px] font-medium tracking-[0.15em] text-zinc-500 dark:text-zinc-500 uppercase mb-4 md:mb-0">
-            © 2024 Poly Gibi Gubaie (ፖሊ ጊቢ ጉባኤ). All Rights Reserved.
+            {t("footer.rights_reserved")}
           </p>
           <div className="flex items-center gap-6 text-[10px] font-bold tracking-[0.1em] text-zinc-400 uppercase">
             <a
               href="#"
               className="hover:text-zinc-900 dark:hover:text-white transition-colors"
             >
-              Privacy Policy
+              {t("footer.privacy_policy")}
             </a>
             <a
               href="#"
               className="hover:text-zinc-900 dark:hover:text-white transition-colors"
             >
-              Terms of Service
+              {t("footer.terms_of_service")}
             </a>
           </div>
         </div>

@@ -1,26 +1,26 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 const TopicCards = () => {
+  const { t } = useTranslation();
   const topics = [
     {
       id: 1,
       image: "https://loremflickr.com/800/800/ethiopia,cross/all",
-      tag: "SPIRITUAL BLOG",
-      title: "Read helpful words from the fathers and get spiritual strength",
+      tag: t("topic_cards.topic_1_tag"),
+      title: t("topic_cards.topic_1_title"),
     },
     {
       id: 2,
       image: "https://loremflickr.com/800/800/ethiopian,priest/all",
-      tag: "PODCASTS & MEDIA",
-      title:
-        "Hear the path of the soul through giving in spiritual media with Gibi Gubaie",
+      tag: t("topic_cards.topic_2_tag"),
+      title: t("topic_cards.topic_2_title"),
     },
     {
       id: 3,
       image: "https://loremflickr.com/800/1000/orthodox,bible/all",
-      tag: "SPIRITUAL QUESTIONS",
-      title:
-        "Finding the Truth: Common Questions and Answers in the Orthodox Church",
+      tag: t("topic_cards.topic_3_tag"),
+      title: t("topic_cards.topic_3_title"),
     },
   ];
 
@@ -29,7 +29,7 @@ const TopicCards = () => {
       <div className="flex justify-between items-end mb-16">
         <div>
           <p className="text-[10px] font-bold tracking-[0.2em] text-zinc-500 dark:text-zinc-400 uppercase mb-3">
-            Explore Your Interest
+            {t("topic_cards.explore_interest")}
           </p>
           <div className="flex gap-2">
             <div className="w-10 h-10 bg-brand-dark dark:bg-[#002230] flex flex-col justify-center items-center gap-[3px] rounded-sm cursor-pointer hover:bg-black dark:hover:bg-brand-yellow transition-colors group">
@@ -79,22 +79,17 @@ const TopicCards = () => {
               </h3>
               {index === 0 && (
                 <p className="text-[14px] text-zinc-500 dark:text-zinc-400 mb-6 leading-relaxed">
-                  Read helpful words from the fathers and get spiritual strength
-                  in all situations through discovering the textual messages on
-                  our digital app.
+                  {t("topic_cards.topic_1_desc")}
                 </p>
               )}
               {index === 1 && (
                 <p className="text-[14px] text-zinc-500 dark:text-zinc-400 mb-6 leading-relaxed">
-                  Hear insightful voices on faith and giving throughout the year
-                  uncovering higher meanings from those dedicated to spiritual
-                  causes.
+                  {t("topic_cards.topic_2_desc")}
                 </p>
               )}
               {index === 2 && (
                 <p className="text-[14px] text-zinc-500 dark:text-zinc-400 mb-6 leading-relaxed">
-                  Find deeply helpful guidance and resources specifically to
-                  answer and discover deeper faith here.
+                  {t("topic_cards.topic_3_desc")}
                 </p>
               )}
               <div
