@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import logo from "../assets/polyGG logo blue.png";
 
 const Header = () => {
-  const { i18n } = useTranslation();
+  const { i18n, t } = useTranslation();
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   useEffect(() => {
@@ -40,16 +40,43 @@ const Header = () => {
   };
 
   const departments = [
-    { name: "Education (ትምህርት)", desc: "Spiritual courses and doctrine" },
-    { name: "Choir (መዘምራን)", desc: "Hymns and worship team" },
-    { name: "Charity (ምግባረ ሰናይ)", desc: "Community outreach and support" },
-    { name: "Literature (ስነ-ፅሁፍ)", desc: "Publishing and archiving" },
-    { name: "Media (ሚዲያ)", desc: "Broadcasting and social media" },
-    { name: "Evangelism (ስብከተ ወንጌል)", desc: "Preaching and missions" },
-    { name: "Finance (ፋይናንስ)", desc: "Resource management" },
-    { name: "IT & Tech (ቴክኖሎጂ)", desc: "Digital infrastructure" },
-    { name: "Women's Ministry (የእህቶች)", desc: "Sisters fellowship" },
-    { name: "Youth (ወጣቶች)", desc: "High school and college youth" },
+    {
+      name: t("departments.education.name"),
+      desc: t("departments.education.desc"),
+    },
+    {
+      name: t("departments.development.name"),
+      desc: t("departments.development.desc"),
+    },
+    { name: t("departments.choir.name"), desc: t("departments.choir.desc") },
+    {
+      name: t("departments.members_care.name"),
+      desc: t("departments.members_care.desc"),
+    },
+    {
+      name: t("departments.language_special_needs.name"),
+      desc: t("departments.language_special_needs.desc"),
+    },
+    {
+      name: t("departments.programs_coordination.name"),
+      desc: t("departments.programs_coordination.desc"),
+    },
+    {
+      name: t("departments.professionals_charity.name"),
+      desc: t("departments.professionals_charity.desc"),
+    },
+    {
+      name: t("departments.info_records.name"),
+      desc: t("departments.info_records.desc"),
+    },
+    {
+      name: t("departments.audit_inspection.name"),
+      desc: t("departments.audit_inspection.desc"),
+    },
+    {
+      name: t("departments.finance_property.name"),
+      desc: t("departments.finance_property.desc"),
+    },
   ];
 
   return (
@@ -63,10 +90,10 @@ const Header = () => {
           />
           <div className="flex flex-col">
             <span className="font-serif text-lg xl:text-xl font-bold tracking-tight text-zinc-900 dark:text-white leading-[1.1]">
-              Poly Gibi Gubaie
+              {t("nav.poly_gibi_gubaie")}
             </span>
             <span className="text-[11px] xl:text-[12px] font-medium tracking-normal text-zinc-500 dark:text-zinc-400 mt-0.5">
-              ፖሊ ጊቢ ጉባኤ
+              {t("nav.poly_gibi_gubaie_am")}
             </span>
           </div>
         </Link>
@@ -77,31 +104,31 @@ const Header = () => {
           to="/"
           className="text-zinc-900 dark:text-white pb-1 relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-brand-yellow transition-colors"
         >
-          Home
+          {t("nav.home")}
         </Link>
         <Link
           to="/about"
           className="hover:text-zinc-900 dark:hover:text-white transition-colors"
         >
-          About
+          {t("nav.about")}
         </Link>
         <Link
           to="/faq"
           className="hover:text-zinc-900 dark:hover:text-white transition-colors"
         >
-          FAQ
+          {t("nav.faq")}
         </Link>
         <a
           href="#"
           className="hover:text-zinc-900 dark:hover:text-white transition-colors flex items-center gap-2"
         >
-          Mary's Joy
+          {t("nav.marys_joy")}
         </a>
 
         {/* Mega Menu Dropdown */}
         <div className="relative group/nav h-full py-6 -my-6">
           <button className="flex items-center gap-1.5 hover:text-zinc-900 dark:hover:text-white transition-colors text-[11px] font-bold tracking-widest uppercase outline-none">
-            Departments
+            {t("nav.departments")}
             <svg
               className="w-3.5 h-3.5 group-hover/nav:rotate-180 transition-transform duration-300"
               fill="none"
@@ -159,25 +186,18 @@ const Header = () => {
           </svg>
         </button>
 
-        {/* User Profile Icon */}
-        <button
-          className="p-2.5 rounded-xl text-zinc-600 dark:text-zinc-400 hover:bg-zinc-100 dark:hover:bg-[#002B36] hover:text-brand-dark dark:hover:text-brand-yellow transition-all"
-          title="User Profile"
+        <Link
+          to="/login"
+          className="hidden sm:block text-[11px] font-bold text-zinc-600 dark:text-zinc-300 hover:text-brand-dark dark:hover:text-brand-yellow transition-colors tracking-widest uppercase"
         >
-          <svg
-            className="w-5 h-5"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-            ></path>
-          </svg>
-        </button>
+          {t("nav.login")}
+        </Link>
+        <Link
+          to="/signup"
+          className="hidden sm:block px-4 py-2 text-[11px] font-bold text-white bg-[#002230] dark:bg-brand-yellow dark:text-zinc-900 hover:bg-black dark:hover:bg-amber-400 rounded-xl tracking-[0.1em] transition-all shadow-sm transform hover:-translate-y-0.5 uppercase"
+        >
+          {t("nav.signup")}
+        </Link>
 
         <div className="w-[1px] h-5 bg-zinc-200 dark:bg-zinc-700 mx-1 hidden sm:block"></div>
 
