@@ -6,6 +6,30 @@ import logo from "../assets/polyGG logo blue.png";
 const Header = () => {
   const { i18n, t } = useTranslation();
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const [user, setUser] = useState(null);
+
+  const checkUser = () => {
+    const storedUser = localStorage.getItem("user");
+    if (storedUser) {
+      try {
+        setUser(JSON.parse(storedUser));
+      } catch (e) {}
+    } else {
+      setUser(null);
+    }
+  };
+
+  useEffect(() => {
+    checkUser();
+    window.addEventListener("authChange", checkUser);
+    return () => window.removeEventListener("authChange", checkUser);
+  }, []);
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
+    window.dispatchEvent(new Event("authChange"));
+  };
 
   useEffect(() => {
     if (
@@ -86,14 +110,14 @@ const Header = () => {
           <img
             src={logo}
             alt="Poly Gibi Gubaie Logo"
-            className="h-14 w-14 object-contain shrink-0"
+            className="h-14 w-14 object-contain shrink-0 dark:brightness-0 dark:invert"
           />
           <div className="flex flex-col">
             <span className="font-serif text-lg xl:text-xl font-bold tracking-tight text-zinc-900 dark:text-white leading-[1.1]">
-              {t("nav.poly_gibi_gubaie")}
+              {currentLang === "Amh" ? "ፖሊ ጊቢ ጉባኤ" : "Poly Gibi Gubaie"}
             </span>
             <span className="text-[11px] xl:text-[12px] font-medium tracking-normal text-zinc-500 dark:text-zinc-400 mt-0.5">
-              {t("nav.poly_gibi_gubaie_am")}
+              {currentLang === "Amh" ? "Poly Gibi Gubaie" : "ፖሊ ጊቢ ጉባኤ"}
             </span>
           </div>
         </Link>
@@ -118,12 +142,63 @@ const Header = () => {
         >
           {t("nav.faq")}
         </Link>
-        <a
-          href="#"
-          className="hover:text-zinc-900 dark:hover:text-white transition-colors flex items-center gap-2"
-        >
-          {t("nav.marys_joy")}
-        </a>
+        {/* Mary's Joy Mega Menu Dropdown */}
+        <div className="relative group/mary h-full py-6 -my-6">
+          <button className="flex items-center gap-1.5 hover:text-zinc-900 dark:hover:text-white transition-colors text-[11px] font-bold tracking-widest uppercase outline-none">
+            {t("nav.marys_joy")}
+            <svg
+              className="w-3.5 h-3.5 group-hover/mary:rotate-180 transition-transform duration-300"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M19 9l-7 7-7-7"
+              />
+            </svg>
+          </button>
+
+          <div className="absolute left-1/2 -translate-x-1/2 top-[100%] pt-2 w-[400px] opacity-0 invisible group-hover/mary:opacity-100 group-hover/mary:visible transition-all duration-300 transform translate-y-4 group-hover/mary:translate-y-0 z-50">
+            <div className="bg-white dark:bg-[#002230] rounded-2xl shadow-[0_30px_80px_-15px_rgba(0,0,0,0.15)] dark:shadow-[0_40px_100px_-20px_rgba(0,0,0,0.5)] border border-black/5 dark:border-white/5 p-6 flex flex-col gap-4">
+              <Link
+                to="/marys-joy/articles"
+                className="group/item flex flex-col items-start p-3 -m-3 rounded-xl hover:bg-zinc-50 dark:hover:bg-[#001720] transition-colors"
+              >
+                <span className="font-bold text-[13px] text-zinc-900 dark:text-white normal-case tracking-normal mb-1 group-hover/item:text-brand-yellow transition-colors">
+                  {t("marys_joy_dropdown.articles.name")}
+                </span>
+                <span className="text-[11px] text-zinc-500 dark:text-zinc-400 normal-case tracking-normal font-medium">
+                  {t("marys_joy_dropdown.articles.desc")}
+                </span>
+              </Link>
+              <Link
+                to="/marys-joy/games"
+                className="group/item flex flex-col items-start p-3 -m-3 rounded-xl hover:bg-zinc-50 dark:hover:bg-[#001720] transition-colors"
+              >
+                <span className="font-bold text-[13px] text-zinc-900 dark:text-white normal-case tracking-normal mb-1 group-hover/item:text-brand-yellow transition-colors">
+                  {t("marys_joy_dropdown.games.name")}
+                </span>
+                <span className="text-[11px] text-zinc-500 dark:text-zinc-400 normal-case tracking-normal font-medium">
+                  {t("marys_joy_dropdown.games.desc")}
+                </span>
+              </Link>
+              <Link
+                to="/marys-joy/qa"
+                className="group/item flex flex-col items-start p-3 -m-3 rounded-xl hover:bg-zinc-50 dark:hover:bg-[#001720] transition-colors"
+              >
+                <span className="font-bold text-[13px] text-zinc-900 dark:text-white normal-case tracking-normal mb-1 group-hover/item:text-brand-yellow transition-colors">
+                  {t("marys_joy_dropdown.qa.name")}
+                </span>
+                <span className="text-[11px] text-zinc-500 dark:text-zinc-400 normal-case tracking-normal font-medium">
+                  {t("marys_joy_dropdown.qa.desc")}
+                </span>
+              </Link>
+            </div>
+          </div>
+        </div>
 
         {/* Mega Menu Dropdown */}
         <div className="relative group/nav h-full py-6 -my-6">
@@ -186,18 +261,53 @@ const Header = () => {
           </svg>
         </button>
 
-        <Link
-          to="/login"
-          className="hidden sm:block text-[11px] font-bold text-zinc-600 dark:text-zinc-300 hover:text-brand-dark dark:hover:text-brand-yellow transition-colors tracking-widest uppercase"
-        >
-          {t("nav.login")}
-        </Link>
-        <Link
-          to="/signup"
-          className="hidden sm:block px-4 py-2 text-[11px] font-bold text-white bg-[#002230] dark:bg-brand-yellow dark:text-zinc-900 hover:bg-black dark:hover:bg-amber-400 rounded-xl tracking-[0.1em] transition-all shadow-sm transform hover:-translate-y-0.5 uppercase"
-        >
-          {t("nav.signup")}
-        </Link>
+        {!user ? (
+          <>
+            <Link
+              to="/login"
+              className="hidden sm:block text-[11px] font-bold text-zinc-600 dark:text-zinc-300 hover:text-brand-dark dark:hover:text-brand-yellow transition-colors tracking-widest uppercase"
+            >
+              {t("nav.login")}
+            </Link>
+            <Link
+              to="/signup"
+              className="hidden sm:block px-4 py-2 text-[11px] font-bold text-white bg-[#002230] dark:bg-brand-yellow dark:text-zinc-900 hover:bg-black dark:hover:bg-amber-400 rounded-xl tracking-[0.1em] transition-all shadow-sm transform hover:-translate-y-0.5 uppercase"
+            >
+              {t("nav.signup")}
+            </Link>
+          </>
+        ) : (
+          <div className="relative group/profile h-full py-2 flex items-center">
+            <button className="flex items-center justify-center w-8 h-8 rounded-full border-2 border-zinc-300 dark:border-zinc-600 bg-transparent text-zinc-600 dark:text-zinc-400 font-bold uppercase text-[13px] hover:border-brand-dark dark:hover:border-brand-yellow hover:text-brand-dark dark:hover:text-brand-yellow transition-all">
+              {user.firstName
+                ? user.firstName[0]
+                : user.email
+                  ? user.email[0]
+                  : "U"}
+            </button>
+
+            <div className="absolute right-0 top-[100%] mt-2 w-48 opacity-0 invisible group-hover/profile:opacity-100 group-hover/profile:visible transition-all duration-300 transform translate-y-2 group-hover/profile:translate-y-0 z-50">
+              <div className="bg-white dark:bg-[#002230] rounded-2xl shadow-xl border border-black/5 dark:border-white/5 p-2 flex flex-col gap-1">
+                <div className="text-sm font-bold text-zinc-900 dark:text-white px-3 py-2 truncate">
+                  {user.firstName} {user.lastName}
+                </div>
+                <div className="h-px bg-zinc-100 dark:bg-zinc-800 mx-1 my-1"></div>
+                <Link
+                  to="/profile"
+                  className="text-left px-3 py-2.5 text-[12px] font-bold text-zinc-600 dark:text-zinc-300 hover:text-brand-dark dark:hover:text-brand-yellow hover:bg-zinc-50 dark:hover:bg-[#002B36] rounded-xl transition-colors uppercase tracking-wider"
+                >
+                  Profile
+                </Link>
+                <button
+                  onClick={handleLogout}
+                  className="text-left px-3 py-2.5 text-[12px] font-bold text-red-500 hover:bg-red-50 dark:hover:bg-red-500/10 rounded-xl transition-colors uppercase tracking-wider"
+                >
+                  Logout
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
 
         <div className="w-[1px] h-5 bg-zinc-200 dark:bg-zinc-700 mx-1 hidden sm:block"></div>
 
