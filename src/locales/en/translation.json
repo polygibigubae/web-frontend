@@ -10,56 +10,71 @@
     "poly_gibi_gubaie": "Poly Gibi Gubaie",
     "poly_gibi_gubaie_am": "ፖሊ ጊቢ ጉባኤ"
   },
+  "marys_joy_dropdown": {
+    "articles": {
+      "name": "Spiritual Articles",
+      "desc": "Read and find comfort in spiritual writings"
+    },
+    "games": {
+      "name": "Spiritual Games & Quizzes",
+      "desc": "Engage in spiritual quizzes and games"
+    },
+    "qa": {
+      "name": "Q&A & Contact",
+      "desc": "Ask your spiritual questions and get in touch"
+    }
+  },
   "departments": {
     "education": {
-      "name": "Education",
-      "desc": "Spiritual courses and doctrine"
+      "name": "Education & Apostolic Service",
+      "desc": "Gospel Teaching, Trainings and Reading Programs"
     },
     "development": {
-      "name": "Development / Charity / Projects",
-      "desc": "Project development and management"
+      "name": "Development & Revenue Collection",
+      "desc": "Income Generating Projects and Financial Development Works"
     },
     "choir": {
-      "name": "Choir",
-      "desc": "Hymns and worship team"
+      "name": "Choir & Fine Arts",
+      "desc": "Songs, Theatre and Literary Arts Stages"
     },
     "members_care": {
-      "name": "Members Care",
-      "desc": "Community outreach and support"
+      "name": "Members Care, Counseling & Capacity Building",
+      "desc": "Member Follow-up, Psychological Counseling and Skill Development"
     },
     "language_special_needs": {
-      "name": "Language & Special Needs",
-      "desc": "Language and special needs service"
+      "name": "Languages & Special Needs Coordination",
+      "desc": "Diverse Languages and Disabilities Services Coordination"
     },
     "programs_coordination": {
       "name": "Batch & Programs Coordination",
-      "desc": "Programs scheduling"
+      "desc": "Graduates Preparation, Trips and Annual Festivals"
     },
     "professionals_charity": {
-      "name": "Professionals & Charity",
-      "desc": "Volunteering professional skills"
+      "name": "Professionals & Charity Coordination",
+      "desc": "Community Service and Free Professional Support Programs"
     },
     "info_records": {
-      "name": "Information & Records",
-      "desc": "Data entry and management"
+      "name": "Planning, Monitoring, Reporting & Information",
+      "desc": "Strategic Planning, Performance Evaluation and Data Center"
     },
     "audit_inspection": {
-      "name": "Audit & Inspection",
-      "desc": "Auditing resources"
+      "name": "Audit Service",
+      "desc": "Internal Control, System and Financial Inspection Verification"
     },
     "finance_property": {
       "name": "Finance & Property",
-      "desc": "Resource management"
+      "desc": "Budget Administration, Accounting and Property Control"
     }
   },
   "hero": {
-    "established": "Established 1888",
+    "established": "Established 1983",
     "title_digital": "The Digital",
-    "title_sanctuary": "Sanctuary.",
-    "description": "Where ancient Ethiopian Orthodox Tewahedo traditions meet the digital age to connect our global community effortlessly. Access resources, stay informed, and engage spiritually inside this sanctuary.",
-    "start_contributing": "Start Contributing",
+    "title_sanctuary": "Sanctuary",
+    "subtitle": "Integrating our Holy Church’s teachings with the digital world, providing a unified platform for all our Campus Ministry services.",
+    "subsubtitle": "Stay informed, engage spiritually, all at your fingertips.",
+    "start_contributing": "Join Our Community",
     "get_involved": "Get Involved",
-    "membership_registration": "Membership Registration"
+    "membership_registration": "Learn More"
   },
   "topic_cards": {
     "explore_interest": "Explore Your Interest",
