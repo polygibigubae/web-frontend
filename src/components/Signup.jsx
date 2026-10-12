@@ -62,7 +62,7 @@ const Signup = () => {
               <img
                 src={logo}
                 alt="Logo"
-                className="w-14 h-14 object-contain mx-auto transition-transform hover:scale-110 duration-500"
+                className="w-14 h-14 object-contain mx-auto transition-transform hover:scale-110 duration-500 dark:brightness-0 dark:invert"
               />
             </Link>
             <h1 className="text-3xl font-serif font-bold text-zinc-900 dark:text-white mb-2 tracking-tight">
