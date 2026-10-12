@@ -25,19 +25,28 @@ const Hero = () => {
               {t("hero.title_sanctuary")}
             </span>
           </h1>
-          <p className="text-zinc-600 dark:text-zinc-300 mb-12 max-w-[440px] leading-[1.85] text-[16px]">
-            {t("hero.description")}
+          <p className="text-zinc-600 dark:text-zinc-300 mb-6 max-w-[480px] leading-[1.8] text-[17px]">
+            {t("hero.subtitle")}
           </p>
+          <div className="flex items-start gap-4 mb-12 max-w-[460px]">
+            <div className="w-1.5 h-1.5 rounded-full bg-brand-yellow mt-2.5 flex-shrink-0 shadow-[0_0_10px_rgba(255,212,59,0.8)]"></div>
+            <p className="text-[#002230] dark:text-zinc-100 font-semibold text-[16px] leading-[1.6] tracking-wide">
+              {t("hero.subsubtitle")}
+            </p>
+          </div>
           <div className="flex flex-wrap items-center gap-6">
-            <button className="px-9 py-4 bg-[#002230] dark:bg-brand-yellow text-white dark:text-zinc-900 text-[12px] font-bold tracking-wider rounded-xl shadow-[0_12px_30px_-10px_rgba(0,34,48,0.6)] dark:shadow-[0_12px_30px_-10px_rgba(255,212,59,0.3)] hover:shadow-[0_20px_40px_-10px_rgba(0,34,48,0.7)] dark:hover:shadow-[0_20px_40px_-10px_rgba(255,212,59,0.5)] hover:-translate-y-1 transition-all duration-300 uppercase">
-              {t("hero.start_contributing")}
-            </button>
             <Link
               to="/register"
+              className="inline-block px-9 py-4 bg-[#002230] hover:bg-[#001720] dark:bg-brand-yellow dark:hover:bg-amber-400 text-white dark:text-zinc-900 text-[12px] font-bold tracking-wider rounded-xl transition-all duration-300 uppercase transform hover:-translate-y-0.5 shadow-sm hover:shadow-md active:scale-95"
+            >
+              {t("hero.start_contributing")}
+            </Link>
+            <Link
+              to="/about"
               className="group text-[12px] font-bold text-zinc-900 dark:text-zinc-200 flex items-center gap-2 uppercase tracking-wider px-2 py-4 hover:text-brand-yellow dark:hover:text-brand-yellow transition-colors"
             >
-              {t("hero.membership_registration")}
-              <span className="text-lg leading-none transform group-hover:translate-x-1 transition-transform">
+              <span>{t("hero.membership_registration")}</span>
+              <span className="text-[16px] flex items-center justify-center transform group-hover:translate-x-1 transition-transform -mt-[1px]">
                 →
               </span>
             </Link>
