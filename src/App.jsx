@@ -8,6 +8,10 @@ import FAQ from "./components/FAQ";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
 import Registration from "./components/Registration";
+import Profile from "./components/Profile";
+import SpiritualArticles from "./components/SpiritualArticles";
+import SpiritualGames from "./components/SpiritualGames";
+import ContactQA from "./components/ContactQA";
 
 function App() {
   return (
@@ -22,6 +26,10 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/register" element={<Registration />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/marys-joy/articles" element={<SpiritualArticles />} />
+            <Route path="/marys-joy/games" element={<SpiritualGames />} />
+            <Route path="/marys-joy/qa" element={<ContactQA />} />
           </Routes>
         </main>
         <Footer />
