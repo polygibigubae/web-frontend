@@ -29,7 +29,7 @@ function useCountUp(end, duration = 2000) {
 }
 
 const StatsSection = () => {
-  const { count: deptCount, ref: deptRef } = useCountUp(50, 2000);
+  const { count: deptCount, ref: deptRef } = useCountUp(10, 2000);
   const { count: memberCount, ref: memberRef } = useCountUp(10000, 2500);
 
   const containerVariants = {
@@ -65,7 +65,7 @@ const StatsSection = () => {
             className="flex flex-col items-center"
           >
             <span className="text-4xl md:text-6xl font-serif font-bold text-[#002230] dark:text-brand-yellow mb-3 tracking-tight drop-shadow-md">
-              1888
+              1983
             </span>
             <span className="text-[11px] font-bold tracking-[0.25em] text-zinc-500 dark:text-zinc-400 uppercase">
               Established
