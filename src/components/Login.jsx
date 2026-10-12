@@ -27,6 +27,10 @@ const Login = () => {
       const data = await response.json();
       if (response.ok) {
         localStorage.setItem("token", data.data.token);
+        if (data.data.user) {
+          localStorage.setItem("user", JSON.stringify(data.data.user));
+        }
+        window.dispatchEvent(new Event("authChange"));
         navigate("/");
       } else {
         setError(data.message || "Failed to login");
@@ -56,7 +60,7 @@ const Login = () => {
               <img
                 src={logo}
                 alt="Logo"
-                className="w-16 h-16 object-contain mx-auto transition-transform hover:scale-110 duration-500"
+                className="w-16 h-16 object-contain mx-auto transition-transform hover:scale-110 duration-500 dark:brightness-0 dark:invert"
               />
             </Link>
             <h1 className="text-3xl font-serif font-bold text-zinc-900 dark:text-white mb-2 tracking-tight">
